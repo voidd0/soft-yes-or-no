@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>soft-yes-or-no - stop chasing the warm maybe</title>
+    <meta
+      name="description"
+      content="Free deterministic checker for warm-but-vague replies across dating, recruiting, sales, client, support, family, and workplace threads. Score enthusiasm, specificity, initiative, hedging, delay, avoidance, and no-signal risk."
+    />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#141019" />
+    <link rel="canonical" href="https://tells.voiddo.com/soft-yes-or-no/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="soft-yes-or-no - stop chasing the warm maybe" />
+    <meta
+      property="og:description"
+      content="Deterministic checker for replies that sound positive but still refuse to become a real yes."
+    />
+    <meta property="og:url" content="https://tells.voiddo.com/soft-yes-or-no/" />
+    <meta property="og:site_name" content="tells by vøiddo" />
+    <meta property="og:image" content="https://tells.voiddo.com/og-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="soft-yes-or-no - stop chasing the warm maybe"
+    />
+    <meta
+      name="twitter:description"
+      content="Free deterministic checker for warm replies that keep sounding open without carrying the next step."
+    />
+    <meta name="twitter:image" content="https://tells.voiddo.com/og-card.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "soft-yes-or-no",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "url": "https://tells.voiddo.com/soft-yes-or-no/",
+        "description": "Free deterministic warm-maybe checker for enthusiasm, specificity, initiative, hedging, delay, avoidance, and no-signal risk.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "vøiddo",
+          "url": "https://voiddo.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "vøiddo",
+          "url": "https://voiddo.com/"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "tells",
+          "url": "https://tells.voiddo.com/"
+        },
+        "featureList": [
+          "Deterministic one-reply warm-maybe check",
+          "Enthusiasm, specificity, initiative, hedging, delay, avoidance, and no-signal scoring",
+          "Reply guidance for dating, recruiting, sales, client, support, family, and workplace threads",
+          "Paid handoff into tells Deep Dive when one reply is not enough"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <span class="brand-mark">s</span>
+          <div>
+            <p class="eyebrow">vøiddo micro-tool</p>
+            <h1>soft-yes-or-no</h1>
+          </div>
+        </div>
+        <a class="quiet-link" href="./compare-chatgpt-gemini.html"
+          >compare vs ChatGPT/Gemini</a
+        >
+      </header>
+
+      <main>
+        <section class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">warm maybe triage</p>
+            <h2>When a reply sounds open, but still refuses to become a real yes.</h2>
+            <p class="lede">
+              <code>soft-yes-or-no</code> is a deterministic first pass for one common trap:
+              dating, recruiting, client, sales, support, family, or workplace replies that feel
+              positive in tone while keeping the actual next step blurry.
+            </p>
+            <div class="hero-points">
+              <span>zero API</span>
+              <span>same reply, same result</span>
+              <span>warm maybe, soft no, or clear yes</span>
+            </div>
+          </div>
+
+          <section class="console-panel" aria-labelledby="checker-title">
+            <div class="panel-head">
+              <p class="eyebrow">live checker</p>
+              <h3 id="checker-title">Paste one incoming reply</h3>
+            </div>
+
+            <label class="field-label" for="reply-input">Reply text</label>
+            <textarea id="reply-input" spellcheck="false">I'd love to. This week is just wild on my side. Maybe sometime next month once things settle a little?</textarea>
+
+            <div class="control-grid">
+              <label class="context-field" for="hours-input">
+                <span>hours since reply</span>
+                <input id="hours-input" type="number" min="0" step="1" value="36" />
+              </label>
+              <label class="context-field" for="pings-input">
+                <span>prior pings from you</span>
+                <input id="pings-input" type="number" min="0" step="1" value="1" />
+              </label>
+            </div>
+
+            <div class="action-row">
+              <button id="analyze-button" type="button">read the maybe</button>
+              <button id="clear-button" class="ghost-button" type="button">clear</button>
+            </div>
+
+            <div class="status-row">
+              <p id="verdict-chip" class="verdict-chip">ask one clarifier</p>
+              <p id="counter-line" class="counter-line">22 words · 36h · 1 prior ping</p>
+            </div>
+
+            <section class="decision-panel" aria-live="polite">
+              <div class="panel-subhead">
+                <p class="eyebrow">thread posture</p>
+                <p id="posture-chip" class="score-chip">soft-yes</p>
+              </div>
+              <p id="summary-line" class="decision-summary"></p>
+              <ul id="why-list" class="decision-reasons"></ul>
+            </section>
+
+            <div class="meter-grid" id="signal-grid" aria-live="polite"></div>
+
+            <section class="suggestions-panel">
+              <div class="panel-subhead">
+                <p class="eyebrow">next move</p>
+                <a class="signal-link" href="https://tells.voiddo.com/deep-dive/?ref=soft-yes-or-no-primary"
+                  >use the $19 Deep Dive</a
+                >
+              </div>
+              <ol id="prompts-list"></ol>
+            </section>
+          </section>
+        </section>
+
+        <section class="examples-strip" aria-labelledby="examples-title">
+          <div class="section-head">
+            <p class="eyebrow">proof by example</p>
+            <h3 id="examples-title">Three replies that sound warmer than they really move</h3>
+          </div>
+          <div class="example-tabs" role="tablist" aria-label="soft-yes-or-no examples">
+            <button type="button" class="example-tab active" data-example="recruiter">recruiter</button>
+            <button type="button" class="example-tab" data-example="dating">dating</button>
+            <button type="button" class="example-tab" data-example="client">client</button>
+          </div>
+          <div id="example-card" class="example-card"></div>
+        </section>
+
+        <section class="story-grid">
+          <article class="story-panel">
+            <p class="eyebrow">what it catches</p>
+            <h3>Warmth, delay, and zero logistics in the same sentence.</h3>
+            <p>
+              The reply sounds encouraging, but the actual work of scheduling, deciding, or
+              owning the next step never arrives. That is where people start chasing a maybe.
+            </p>
+          </article>
+          <article class="story-panel">
+            <p class="eyebrow">what it does not do</p>
+            <h3>This is not mind-reading, diagnosis, or a full relationship verdict.</h3>
+            <p>
+              It only scores what this one reply is doing. If the bigger pattern matters, move
+              into <code>tells</code> for the thread, person, or recurring loop.
+            </p>
+          </article>
+          <article class="story-panel">
+            <p class="eyebrow">why it matters</p>
+            <h3>False optimism makes people do extra scheduling labor.</h3>
+            <p>
+              This page exists to stop the second and third rescue follow-up when the reply still
+              has not earned more effort from your side.
+            </p>
+          </article>
+        </section>
+
+        <section class="cta-band">
+          <div>
+            <p class="eyebrow">next step</p>
+            <h3>Need more than a one-reply read?</h3>
+            <p>
+              <code>soft-yes-or-no</code> is the narrow free pass. <code>tells</code> is the paid
+              move when one soft yes is part of a bigger pattern across a thread, recruiter,
+              prospect, client, support loop, or relationship.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="primary-link" href="https://tells.voiddo.com/deep-dive/?ref=soft-yes-or-no-bottom"
+              >deep dive · $19 once</a
+            >
+            <a class="quiet-link" href="https://tells.voiddo.com/signal-toolkit/?ref=soft-yes-or-no-toolkit"
+              >all free checks</a
+            >
+            <a class="quiet-link" href="https://tells.voiddo.com/pricing/?ref=soft-yes-or-no-pricing"
+              >starter · $14.99/mo</a
+            >
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-note">
+        Built by vøiddo — a small studio shipping AI-flavoured products, free dev tools, Chrome
+        extensions and weird browser games.
+      </footer>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

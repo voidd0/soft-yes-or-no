@@ -1,0 +1,109 @@
+{
+  "name": "@v0idd0/soft-yes-or-no",
+  "version": "0.1.0",
+  "description": "soft-yes-or-no — deterministic warm-maybe checker and ChatGPT/Gemini alternative for dating, recruiting, sales, client, support, family, and workplace replies that sound positive, interested, or polite but still may be stalling.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "soft-yes-or-no": "./bin/soft-yes-or-no.js"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "stage:site": "bash ./scripts/stage-site.sh"
+  },
+  "keywords": [
+    "soft-yes-or-no",
+    "soft-yes",
+    "message-analysis",
+    "communication",
+    "vague-interest",
+    "vague-interest-checker",
+    "follow-up",
+    "soft-no",
+    "warm-maybe",
+    "warm-maybe-checker",
+    "chatgpt-alternative",
+    "gemini-alternative",
+    "interested-but-vague",
+    "warm-but-vague",
+    "soft-stall",
+    "stall-checker",
+    "calendar-avoidance",
+    "warm-text",
+    "friendly-but-noncommittal",
+    "polite-no",
+    "polite-maybe",
+    "stringing-me-along",
+    "is-this-a-soft-no",
+    "is-this-a-warm-maybe",
+    "does-this-person-mean-it",
+    "interested-but-not-committing",
+    "not-committing",
+    "warm-lead",
+    "sales-follow-up",
+    "sales-stall",
+    "sales-maybe",
+    "sales-soft-no",
+    "recruiter-thread",
+    "recruiter-stall",
+    "recruiter-maybe",
+    "recruiter-soft-no",
+    "client-thread",
+    "client-stall",
+    "client-maybe",
+    "client-soft-no",
+    "support-maybe",
+    "support-soft-no",
+    "meeting-maybe",
+    "date-maybe",
+    "vendor-maybe",
+    "should-i-push-or-wait",
+    "warm-maybe",
+    "soft-no",
+    "should-i-follow-up",
+    "should-i-wait",
+    "dating-text",
+    "recruiter-follow-up",
+    "client-follow-up",
+    "sales-pipeline",
+    "support-thread",
+    "family-text",
+    "workplace-text",
+    "dating",
+    "relationships",
+    "workplace",
+    "heuristics",
+    "cli",
+    "voiddo",
+    "tells"
+  ],
+  "author": "vøiddo <support@voiddo.com> (https://voiddo.com)",
+  "license": "MIT",
+  "homepage": "https://tells.voiddo.com/soft-yes-or-no/?ref=soft-yes-or-no-npm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voidd0/soft-yes-or-no.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voidd0/soft-yes-or-no/issues",
+    "email": "support@voiddo.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE",
+    "from-the-studio.md",
+    "compare-chatgpt-gemini.md"
+  ],
+  "funding": {
+    "type": "individual",
+    "url": "https://voiddo.com/contact/"
+  }
+}
