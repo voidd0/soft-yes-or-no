@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/index.js",
   "bin": {
-    "soft-yes-or-no": "./bin/soft-yes-or-no.js"
+    "soft-yes-or-no": "bin/soft-yes-or-no.js"
   },
   "scripts": {
     "test": "node test.js",
