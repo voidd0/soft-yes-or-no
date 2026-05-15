@@ -1,6 +1,6 @@
 {
   "name": "@v0idd0/soft-yes-or-no",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "soft-yes-or-no — deterministic warm-maybe checker and ChatGPT/Gemini alternative for dating, recruiting, sales, client, support, family, and workplace replies that sound positive, interested, or polite but still may be stalling.",
   "type": "module",
   "main": "src/index.js",

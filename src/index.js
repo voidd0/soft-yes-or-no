@@ -309,6 +309,38 @@ export function analyzeSoftYesOrNo(input, options = {}) {
   };
 }
 
+function buildSiblingExit(posture) {
+  const base = "https://tells.voiddo.com";
+  const r = "?ref=soft-yes-or-no-cli";
+  const lines = ["next:"];
+  if (posture === "soft-no") {
+    lines.push(
+      `- score your follow-up before sending: ${base}/double-text-risk/${r}`,
+      `- check the full next move: ${base}/message-next-step/${r}`
+    );
+  } else if (posture === "polite-maybe") {
+    lines.push(
+      `- if this keeps becoming another reschedule: ${base}/raincheck-or-run/${r}`,
+      `- if the reply is mixed in more ways than warmth alone: ${base}/ambiguity-meter/${r}`
+    );
+  } else if (posture === "soft-yes") {
+    lines.push(
+      `- when the thread needs a real conversation instead: ${base}/call-not-text/${r}`,
+      `- to draft the clarifier cleanly: ${base}/replytone/${r}`
+    );
+  } else {
+    lines.push(
+      `- to send the right message now: ${base}/replytone/${r}`,
+      `- for the full next move: ${base}/message-next-step/${r}`
+    );
+  }
+  lines.push(
+    `- upgrade for recurring patterns: ${base}/deep-dive/${r}`,
+    `- ChatGPT/Gemini compare: ${base}/soft-yes-or-no/compare-chatgpt-gemini.html?ref=soft-yes-or-no-cli-compare`
+  );
+  return lines;
+}
+
 export function formatReport(result) {
   const lines = [
     `posture: ${result.posture}`,
@@ -338,12 +370,7 @@ export function formatReport(result) {
     }
   }
 
-  lines.push(
-    "",
-    "next: Use tells when one encouraging-but-vague reply is part of a bigger pattern.",
-    "- quick next paid step: https://tells.voiddo.com/deep-dive/?ref=soft-yes-or-no-cli",
-    "- recurring reads: https://tells.voiddo.com/?ref=soft-yes-or-no-cli"
-  );
+  lines.push("", ...buildSiblingExit(result.posture));
 
   return lines.join("\n");
 }
